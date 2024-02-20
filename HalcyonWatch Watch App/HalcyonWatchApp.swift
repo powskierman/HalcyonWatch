@@ -8,10 +8,11 @@
 import SwiftUI
 
 @main
-struct HalcyonWatch_Watch_AppApp: App {
+struct Halcyon_2_0_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(ClimateViewModel.shared)
         }
     }
 }

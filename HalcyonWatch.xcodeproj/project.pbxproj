@@ -9,9 +9,21 @@
 /* Begin PBXBuildFile section */
 		D0D355502B854DC700883250 /* HalcyonWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D0D3554F2B854DC700883250 /* HalcyonWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D0D355552B854DC700883250 /* HalcyonWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D355542B854DC700883250 /* HalcyonWatchApp.swift */; };
-		D0D355572B854DC700883250 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D355562B854DC700883250 /* ContentView.swift */; };
-		D0D355592B854DC900883250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D355582B854DC900883250 /* Assets.xcassets */; };
 		D0D3555C2B854DC900883250 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D3555B2B854DC900883250 /* Preview Assets.xcassets */; };
+		D0D355672B854DEA00883250 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D355662B854DEA00883250 /* Enums.swift */; };
+		D0D3556B2B854E0400883250 /* HassAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3556A2B854E0400883250 /* HassAPIService.swift */; };
+		D0D3556D2B854E1100883250 /* ClimateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3556C2B854E1100883250 /* ClimateViewModel.swift */; };
+		D0D3556F2B854E2500883250 /* ThermostatScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3556E2B854E2500883250 /* ThermostatScaleView.swift */; };
+		D0D355712B854E3300883250 /* ThermostatModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D355702B854E3300883250 /* ThermostatModeView.swift */; };
+		D0D355732B854E3D00883250 /* ThermostatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D355722B854E3D00883250 /* ThermostatView.swift */; };
+		D0D355752B854E4700883250 /* ThermometerDialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D355742B854E4700883250 /* ThermometerDialView.swift */; };
+		D0D355772B854E4F00883250 /* ThermostatPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D355762B854E4F00883250 /* ThermostatPlaceholderView.swift */; };
+		D0D355792B854E5A00883250 /* thermostat.svg in Resources */ = {isa = PBXBuildFile; fileRef = D0D355782B854E5A00883250 /* thermostat.svg */; };
+		D0D3557B2B854EAC00883250 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3557A2B854EAC00883250 /* ContentView.swift */; };
+		D0D3557D2B854EC600883250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D3557C2B854EC500883250 /* Assets.xcassets */; };
+		D0D355802B854F1700883250 /* HassFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0D3557F2B854F1700883250 /* HassFramework.xcframework */; };
+		D0D355812B854F1700883250 /* HassFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0D3557F2B854F1700883250 /* HassFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0D355842B854F7C00883250 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = D0D355832B854F7C00883250 /* Secrets.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,15 +48,37 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0D355822B854F1700883250 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D0D355812B854F1700883250 /* HassFramework.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D0D355492B854DC700883250 /* HalcyonWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HalcyonWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D3554F2B854DC700883250 /* HalcyonWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HalcyonWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D355542B854DC700883250 /* HalcyonWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalcyonWatchApp.swift; sourceTree = "<group>"; };
-		D0D355562B854DC700883250 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		D0D355582B854DC900883250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0D3555B2B854DC900883250 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D0D355662B854DEA00883250 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		D0D3556A2B854E0400883250 /* HassAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HassAPIService.swift; sourceTree = "<group>"; };
+		D0D3556C2B854E1100883250 /* ClimateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClimateViewModel.swift; sourceTree = "<group>"; };
+		D0D3556E2B854E2500883250 /* ThermostatScaleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatScaleView.swift; sourceTree = "<group>"; };
+		D0D355702B854E3300883250 /* ThermostatModeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatModeView.swift; sourceTree = "<group>"; };
+		D0D355722B854E3D00883250 /* ThermostatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatView.swift; sourceTree = "<group>"; };
+		D0D355742B854E4700883250 /* ThermometerDialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermometerDialView.swift; sourceTree = "<group>"; };
+		D0D355762B854E4F00883250 /* ThermostatPlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatPlaceholderView.swift; sourceTree = "<group>"; };
+		D0D355782B854E5A00883250 /* thermostat.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = thermostat.svg; sourceTree = "<group>"; };
+		D0D3557A2B854EAC00883250 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D0D3557C2B854EC500883250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0D3557F2B854F1700883250 /* HassFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = HassFramework.xcframework; path = ../Frameworks/HassFramework/HassFramework.xcframework; sourceTree = "<group>"; };
+		D0D355832B854F7C00883250 /* Secrets.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D355802B854F1700883250 /* HassFramework.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,8 +96,15 @@
 		D0D355422B854DC700883250 = {
 			isa = PBXGroup;
 			children = (
+				D0D355852B85500500883250 /* Views */,
+				D0D355832B854F7C00883250 /* Secrets.plist */,
+				D0D3556C2B854E1100883250 /* ClimateViewModel.swift */,
+				D0D355662B854DEA00883250 /* Enums.swift */,
+				D0D3556A2B854E0400883250 /* HassAPIService.swift */,
+				D0D355782B854E5A00883250 /* thermostat.svg */,
 				D0D355532B854DC700883250 /* HalcyonWatch Watch App */,
 				D0D3554A2B854DC700883250 /* Products */,
+				D0D3557E2B854F1700883250 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,9 +120,9 @@
 		D0D355532B854DC700883250 /* HalcyonWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				D0D3557A2B854EAC00883250 /* ContentView.swift */,
 				D0D355542B854DC700883250 /* HalcyonWatchApp.swift */,
-				D0D355562B854DC700883250 /* ContentView.swift */,
-				D0D355582B854DC900883250 /* Assets.xcassets */,
+				D0D3557C2B854EC500883250 /* Assets.xcassets */,
 				D0D3555A2B854DC900883250 /* Preview Content */,
 			);
 			path = "HalcyonWatch Watch App";
@@ -92,6 +134,26 @@
 				D0D3555B2B854DC900883250 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D0D3557E2B854F1700883250 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0D3557F2B854F1700883250 /* HassFramework.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0D355852B85500500883250 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0D355722B854E3D00883250 /* ThermostatView.swift */,
+				D0D3556E2B854E2500883250 /* ThermostatScaleView.swift */,
+				D0D355742B854E4700883250 /* ThermometerDialView.swift */,
+				D0D355702B854E3300883250 /* ThermostatModeView.swift */,
+				D0D355762B854E4F00883250 /* ThermostatPlaceholderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -121,6 +183,7 @@
 				D0D3554B2B854DC700883250 /* Sources */,
 				D0D3554C2B854DC700883250 /* Frameworks */,
 				D0D3554D2B854DC700883250 /* Resources */,
+				D0D355822B854F1700883250 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -180,8 +243,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0D355842B854F7C00883250 /* Secrets.plist in Resources */,
 				D0D3555C2B854DC900883250 /* Preview Assets.xcassets in Resources */,
-				D0D355592B854DC900883250 /* Assets.xcassets in Resources */,
+				D0D3557D2B854EC600883250 /* Assets.xcassets in Resources */,
+				D0D355792B854E5A00883250 /* thermostat.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,8 +257,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0D355572B854DC700883250 /* ContentView.swift in Sources */,
+				D0D3556F2B854E2500883250 /* ThermostatScaleView.swift in Sources */,
+				D0D3557B2B854EAC00883250 /* ContentView.swift in Sources */,
+				D0D355732B854E3D00883250 /* ThermostatView.swift in Sources */,
+				D0D355672B854DEA00883250 /* Enums.swift in Sources */,
+				D0D3556B2B854E0400883250 /* HassAPIService.swift in Sources */,
 				D0D355552B854DC700883250 /* HalcyonWatchApp.swift in Sources */,
+				D0D3556D2B854E1100883250 /* ClimateViewModel.swift in Sources */,
+				D0D355712B854E3300883250 /* ThermostatModeView.swift in Sources */,
+				D0D355772B854E4F00883250 /* ThermostatPlaceholderView.swift in Sources */,
+				D0D355752B854E4700883250 /* ThermometerDialView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
