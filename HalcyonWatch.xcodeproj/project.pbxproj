@@ -96,12 +96,9 @@
 		D0D355422B854DC700883250 = {
 			isa = PBXGroup;
 			children = (
+				D0D355862B8555E600883250 /* Models */,
 				D0D355852B85500500883250 /* Views */,
-				D0D355832B854F7C00883250 /* Secrets.plist */,
-				D0D3556C2B854E1100883250 /* ClimateViewModel.swift */,
-				D0D355662B854DEA00883250 /* Enums.swift */,
-				D0D3556A2B854E0400883250 /* HassAPIService.swift */,
-				D0D355782B854E5A00883250 /* thermostat.svg */,
+				D0D355872B85562900883250 /* ViewModels */,
 				D0D355532B854DC700883250 /* HalcyonWatch Watch App */,
 				D0D3554A2B854DC700883250 /* Products */,
 				D0D3557E2B854F1700883250 /* Frameworks */,
@@ -120,8 +117,6 @@
 		D0D355532B854DC700883250 /* HalcyonWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
-				D0D3557A2B854EAC00883250 /* ContentView.swift */,
-				D0D355542B854DC700883250 /* HalcyonWatchApp.swift */,
 				D0D3557C2B854EC500883250 /* Assets.xcassets */,
 				D0D3555A2B854DC900883250 /* Preview Content */,
 			);
@@ -147,6 +142,7 @@
 		D0D355852B85500500883250 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D0D3557A2B854EAC00883250 /* ContentView.swift */,
 				D0D355722B854E3D00883250 /* ThermostatView.swift */,
 				D0D3556E2B854E2500883250 /* ThermostatScaleView.swift */,
 				D0D355742B854E4700883250 /* ThermometerDialView.swift */,
@@ -154,6 +150,26 @@
 				D0D355762B854E4F00883250 /* ThermostatPlaceholderView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D0D355862B8555E600883250 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0D355832B854F7C00883250 /* Secrets.plist */,
+				D0D355542B854DC700883250 /* HalcyonWatchApp.swift */,
+				D0D355662B854DEA00883250 /* Enums.swift */,
+				D0D3556A2B854E0400883250 /* HassAPIService.swift */,
+				D0D355782B854E5A00883250 /* thermostat.svg */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D0D355872B85562900883250 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D0D3556C2B854E1100883250 /* ClimateViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
