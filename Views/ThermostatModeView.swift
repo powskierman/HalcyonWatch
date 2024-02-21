@@ -15,7 +15,7 @@ struct ThermostatModeView: View {
             Text("\(temperature, specifier: "%.0f")°")
                 .font(.system(size: 54))
                 .foregroundColor(.white)
-
+  
             // Display the mode with an interactive element that allows changing the mode
             // Here, we use the mode binding directly instead of accessing it through a viewModel
             Image(systemName: mode.systemImageName)

@@ -23,19 +23,21 @@ struct ThermostatView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-//                Circle()
-//                    .trim(from: 0.25, to: min(CGFloat(temperature) / 40, 0.75))
-//                    .stroke(
-//                        LinearGradient(
-//                            gradient: Gradient(colors: [Color("Temperature Ring 1"), Color("Temperature Ring 2")]),
-//                            startPoint: .top,
-//                            endPoint: .bottom
-//                        ),
-//                        style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round)
-//                    )
-//                    .frame(width: ringSize, height: ringSize)
-//                    .rotationEffect(.degrees(90))
-//                    .animation(.linear(duration: 1), value: CGFloat(temperature) / 40)
+                ThermometerScaleView()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                Circle()
+                    .trim(from: 0.25, to: min(CGFloat(temperature) / 40, 0.75))
+                    .stroke(
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color("Temperature Ring 1"), Color("Temperature Ring 2")]),
+                            startPoint: .top,
+                            endPoint: .bottom
+                        ),
+                        style: StrokeStyle(lineWidth: 20, lineCap: .round, lineJoin: .round)
+                    )
+                    .frame(width: ringSize, height: ringSize)
+                    .rotationEffect(.degrees(90))
+                    .animation(.linear(duration: 1), value: CGFloat(temperature) / 40)
                 
                 ThermometerDialView(outerDialSize: outerDialSize, degrees: CGFloat(temperature) / 40 * 360)
                 ThermostatModeView(temperature: CGFloat(temperature), mode: $mode)

@@ -13,7 +13,7 @@ class HassAPIService: ObservableObject {
     private var restClient: HassRestClient
 
     init() {
-        self.restClient = HassWatchFramework.HassRestClient.shared
+        self.restClient = HassRestClient.shared
     }
 
     func sendCommand(entityId: String, hvacMode: HvacModes, temperature: Int, completion: @escaping (Result<HAEntity, Error>) -> Void) {
