@@ -11,8 +11,8 @@
 		D0D355552B854DC700883250 /* HalcyonWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D355542B854DC700883250 /* HalcyonWatchApp.swift */; };
 		D0D3555C2B854DC900883250 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D3555B2B854DC900883250 /* Preview Assets.xcassets */; };
 		D0D355672B854DEA00883250 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D355662B854DEA00883250 /* Enums.swift */; };
-		D0D3556B2B854E0400883250 /* HassAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3556A2B854E0400883250 /* HassAPIService.swift */; };
-		D0D3556D2B854E1100883250 /* ClimateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3556C2B854E1100883250 /* ClimateViewModel.swift */; };
+		D0D3556B2B854E0400883250 /* HalcyonAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3556A2B854E0400883250 /* HalcyonAPIService.swift */; };
+		D0D3556D2B854E1100883250 /* HalcyonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3556C2B854E1100883250 /* HalcyonViewModel.swift */; };
 		D0D3556F2B854E2500883250 /* ThermostatScaleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D3556E2B854E2500883250 /* ThermostatScaleView.swift */; };
 		D0D355712B854E3300883250 /* ThermostatModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D355702B854E3300883250 /* ThermostatModeView.swift */; };
 		D0D355732B854E3D00883250 /* ThermostatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D355722B854E3D00883250 /* ThermostatView.swift */; };
@@ -67,8 +67,8 @@
 		D0D355542B854DC700883250 /* HalcyonWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalcyonWatchApp.swift; sourceTree = "<group>"; };
 		D0D3555B2B854DC900883250 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0D355662B854DEA00883250 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
-		D0D3556A2B854E0400883250 /* HassAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HassAPIService.swift; sourceTree = "<group>"; };
-		D0D3556C2B854E1100883250 /* ClimateViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClimateViewModel.swift; sourceTree = "<group>"; };
+		D0D3556A2B854E0400883250 /* HalcyonAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalcyonAPIService.swift; sourceTree = "<group>"; };
+		D0D3556C2B854E1100883250 /* HalcyonViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalcyonViewModel.swift; sourceTree = "<group>"; };
 		D0D3556E2B854E2500883250 /* ThermostatScaleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatScaleView.swift; sourceTree = "<group>"; };
 		D0D355702B854E3300883250 /* ThermostatModeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatModeView.swift; sourceTree = "<group>"; };
 		D0D355722B854E3D00883250 /* ThermostatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThermostatView.swift; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 				D0D355832B854F7C00883250 /* Secrets.plist */,
 				D0D355542B854DC700883250 /* HalcyonWatchApp.swift */,
 				D0D355662B854DEA00883250 /* Enums.swift */,
-				D0D3556A2B854E0400883250 /* HassAPIService.swift */,
+				D0D3556A2B854E0400883250 /* HalcyonAPIService.swift */,
 				D0D355782B854E5A00883250 /* thermostat.svg */,
 			);
 			path = Models;
@@ -167,7 +167,7 @@
 		D0D355872B85562900883250 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				D0D3556C2B854E1100883250 /* ClimateViewModel.swift */,
+				D0D3556C2B854E1100883250 /* HalcyonViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -277,9 +277,9 @@
 				D0D3557B2B854EAC00883250 /* ContentView.swift in Sources */,
 				D0D355732B854E3D00883250 /* ThermostatView.swift in Sources */,
 				D0D355672B854DEA00883250 /* Enums.swift in Sources */,
-				D0D3556B2B854E0400883250 /* HassAPIService.swift in Sources */,
+				D0D3556B2B854E0400883250 /* HalcyonAPIService.swift in Sources */,
 				D0D355552B854DC700883250 /* HalcyonWatchApp.swift in Sources */,
-				D0D3556D2B854E1100883250 /* ClimateViewModel.swift in Sources */,
+				D0D3556D2B854E1100883250 /* HalcyonViewModel.swift in Sources */,
 				D0D355712B854E3300883250 /* ThermostatModeView.swift in Sources */,
 				D0D355772B854E4F00883250 /* ThermostatPlaceholderView.swift in Sources */,
 				D0D355752B854E4700883250 /* ThermometerDialView.swift in Sources */,

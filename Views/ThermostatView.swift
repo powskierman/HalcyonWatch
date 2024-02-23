@@ -4,7 +4,7 @@ struct ThermostatView: View {
     @Binding var temperature: Double
     @Binding var mode: HvacModes // Add binding for HVAC mode
     var room: Room
-    @EnvironmentObject var climateService: ClimateViewModel
+    @EnvironmentObject var climateService: HalcyonViewModel
     
     private let baseRingSize: CGFloat = 180
     private let baseOuterDialSize: CGFloat = 170

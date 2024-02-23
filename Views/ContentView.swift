@@ -1,10 +1,13 @@
 import SwiftUI
+import Combine
 
 struct ContentView: View {
+    @StateObject private var viewModel = HalcyonViewModel()
     @State private var selectedTemperature: Double = 22
     @State private var selectedRoom: Room = .chambre
     @State private var temperaturesForRooms: [Room: Double] = Room.allCases.reduce(into: [:]) { $0[$1] = 22 }
     @State private var hvacModesForRooms: [Room: HvacModes] = Room.allCases.reduce(into: [:]) { $0[$1] = .off }
+    private var cancellables = Set<AnyCancellable>()
 
     var body: some View {
         NavigationView {
@@ -29,26 +32,29 @@ struct ContentView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(selectedRoom.rawValue)
-        }
+            .onChange(of: selectedRoom) { newRoom in
+                   viewModel.fetchDeviceState(for: newRoom.rawValue)
+             }
+         }
     }
 
     private func bindingFor(room: Room) -> Binding<Double> {
         Binding(
-            get: { self.temperaturesForRooms[room, default: 22] },
-            set: { self.temperaturesForRooms[room] = $0 }
+            get: { temperaturesForRooms[room, default: 22] },
+            set: { temperaturesForRooms[room] = $0 }
         )
     }
 
     private func hvacModeBindingFor(room: Room) -> Binding<HvacModes> {
         Binding(
-            get: { self.hvacModesForRooms[room, default: .off] },
-            set: { self.hvacModesForRooms[room] = $0 }
+            get: { hvacModesForRooms[room, default: .off] },
+            set: { hvacModesForRooms[room] = $0 }
         )
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(ClimateViewModel()) // This is where you add the environment object
+        ContentView().environmentObject(HalcyonViewModel()) // This is where you add the environment object
     }
 }
