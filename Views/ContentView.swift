@@ -27,6 +27,9 @@ struct ContentView: View {
                     }
                 }
             }
+            .onChange(of: selectedRoom) { newRoom in
+                   viewModel.fetchDeviceState(for: newRoom.rawValue)
+             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(selectedRoom.rawValue)
         }
