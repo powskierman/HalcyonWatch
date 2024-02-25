@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject private var viewModel = HalcyonViewModel()
     @State private var selectedTemperature: Double = 22
     @State private var selectedRoom: Room = .chambre
     @State private var temperaturesForRooms: [Room: Double] = Room.allCases.reduce(into: [:]) { $0[$1] = 22 }
@@ -52,6 +53,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(ClimateViewModel()) // This is where you add the environment object
+        ContentView().environmentObject(HalcyonViewModel()) // This is where you add the environment object
     }
 }

@@ -14,14 +14,14 @@ class HalcyonViewModel: ObservableObject {
     @Published var lastCallStatus: CallStatus = .pending
     @Published var hasErrorOccurred: Bool = false
     
-    private let clientService: HassAPIService
+    private let clientService: HalcyonAPIService
     private var cancellables = Set<AnyCancellable>()
     
     // Timer for debouncing temperature updates
     private var updateTimer: Timer?
     private let debounceInterval: TimeInterval = 0.5
     
-    init(clientService: HassAPIService = .shared) {
+    init(clientService: HalcyonAPIService = .shared) {
         self.clientService = clientService
     }
     

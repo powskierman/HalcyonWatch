@@ -1,5 +1,5 @@
 //
-//  HassClientService.swift
+//  HalcyonAPIService.swift
 //  Halcyon 2.0 Watch App
 //
 //  Created by Michel Lapointe on 2024-02-15.
