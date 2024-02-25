@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0529AB72B89B1F600B98011 /* HalcyonDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0529AB62B89B1F600B98011 /* HalcyonDevice.swift */; };
 		D0D355502B854DC700883250 /* HalcyonWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = D0D3554F2B854DC700883250 /* HalcyonWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D0D355552B854DC700883250 /* HalcyonWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D355542B854DC700883250 /* HalcyonWatchApp.swift */; };
 		D0D3555C2B854DC900883250 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D3555B2B854DC900883250 /* Preview Assets.xcassets */; };
@@ -62,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D0529AB62B89B1F600B98011 /* HalcyonDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalcyonDevice.swift; sourceTree = "<group>"; };
 		D0D355492B854DC700883250 /* HalcyonWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HalcyonWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D3554F2B854DC700883250 /* HalcyonWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HalcyonWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D355542B854DC700883250 /* HalcyonWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalcyonWatchApp.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				D0D355662B854DEA00883250 /* Enums.swift */,
 				D0D3556A2B854E0400883250 /* HalcyonAPIService.swift */,
 				D0D355782B854E5A00883250 /* thermostat.svg */,
+				D0529AB62B89B1F600B98011 /* HalcyonDevice.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				D0D3557B2B854EAC00883250 /* ContentView.swift in Sources */,
 				D0D355732B854E3D00883250 /* ThermostatView.swift in Sources */,
 				D0D355672B854DEA00883250 /* Enums.swift in Sources */,
+				D0529AB72B89B1F600B98011 /* HalcyonDevice.swift in Sources */,
 				D0D3556B2B854E0400883250 /* HalcyonAPIService.swift in Sources */,
 				D0D355552B854DC700883250 /* HalcyonWatchApp.swift in Sources */,
 				D0D3556D2B854E1100883250 /* HalcyonViewModel.swift in Sources */,

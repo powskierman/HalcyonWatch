@@ -24,7 +24,7 @@ enum Room: String, CaseIterable {
 }
 
 enum HvacModes: String, CaseIterable {
-    case off, heat, cool, dry, fan_only
+    case off, heat, cool, dry, fan_only, heat_cool
 
     var next: HvacModes {
         let allModes = HvacModes.allCases
@@ -40,6 +40,7 @@ enum HvacModes: String, CaseIterable {
         case .cool: return "thermometer.snowflake"
         case .dry: return "drop.fill"
         case .fan_only: return "wind"
+        case .heat_cool: return "heat.waves"
         }
     }
 }
