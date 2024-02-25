@@ -2,8 +2,8 @@ import Foundation
 import Combine
 import HassWatchFramework
 
-class ClimateViewModel: ObservableObject {
-    static let shared = ClimateViewModel()
+class HalcyonViewModel: ObservableObject {
+    static let shared = HalcyonViewModel()
     
     // Observable properties
     @Published var currentEntityId: String = ""

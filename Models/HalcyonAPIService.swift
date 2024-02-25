@@ -8,8 +8,8 @@
 import Foundation
 import HassWatchFramework
 
-class HassAPIService: ObservableObject {
-    static let shared = HassAPIService()
+class HalcyonAPIService: ObservableObject {
+    static let shared = HalcyonAPIService()
     private var restClient: HassRestClient
 
     init() {
@@ -63,7 +63,7 @@ class HassAPIService: ObservableObject {
         _ = HassRestClient.DeviceCommand(service: "climate.set_temperature", entityId: room.entityId, data: commandData)
         
         // Use HassAPIService to send the command
-        HassAPIService.shared.sendCommand(entityId: room.entityId, hvacMode: mode, temperature: temperature) { result in
+        HalcyonAPIService.shared.sendCommand(entityId: room.entityId, hvacMode: mode, temperature: temperature) { result in
 
             switch result {
             case .success(_):
