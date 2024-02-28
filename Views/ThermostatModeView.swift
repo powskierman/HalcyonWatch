@@ -31,7 +31,6 @@ struct ThermostatModeView: View {
     }
 }
 
-
 struct ThermostatModeView_Previews: PreviewProvider {
     static var previews: some View {
         ThermostatModeView(
