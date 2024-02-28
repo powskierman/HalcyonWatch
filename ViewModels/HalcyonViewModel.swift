@@ -3,9 +3,12 @@ import Combine
 import HassWatchFramework
 
 class HalcyonViewModel: ObservableObject {
-    static let shared = HalcyonViewModel()
+    static let shared = HalcyonViewModel(restClient: .shared)
     
-    // Observable properties
+    private var restClient: HassRestClient
+    private var cancellables = Set<AnyCancellable>()
+    
+    // Observable properties with default values
     @Published var currentEntityId: String = ""
     @Published var tempSet: Int = 22
     @Published var fanSpeed: String = "auto"
@@ -14,15 +17,12 @@ class HalcyonViewModel: ObservableObject {
     @Published var lastCallStatus: CallStatus = .pending
     @Published var hasErrorOccurred: Bool = false
     
-    private let clientService: HalcyonAPIService
-    private var cancellables = Set<AnyCancellable>()
-    
     // Timer for debouncing temperature updates
     private var updateTimer: Timer?
     private let debounceInterval: TimeInterval = 0.5
     
-    init(clientService: HalcyonAPIService = .shared) {
-        self.clientService = clientService
+    init(restClient: HassRestClient) {
+        self.restClient = restClient
     }
     
     // Function to cycle to the next HVAC mode and send an update to Home Assistant
@@ -32,23 +32,49 @@ class HalcyonViewModel: ObservableObject {
     }
     
     // Function to update temperature and optionally HVAC mode in Home Assistant
-    public func sendTemperatureUpdate(entityId: String, mode: HvacModes, temperature: Int) {
-        // Debounce temperature update to prevent rapid sending of commands
+    func sendTemperatureUpdate(entityId: String, mode: HvacModes, temperature: Int) {
         updateTimer?.invalidate()
         updateTimer = Timer.scheduledTimer(withTimeInterval: debounceInterval, repeats: false) { [weak self] _ in
-            self?.clientService.sendCommand(entityId: entityId, hvacMode: mode, temperature: temperature) { result in
+            guard let self = self else { return }
+            
+            self.restClient.changeState(entityId: entityId, newState: temperature) { result in
                 DispatchQueue.main.async {
                     switch result {
-                    case .success(_):
-                        print("Temperature and mode set successfully for \(entityId)")
+                    case .success(let entity):
+                        print("Temperature and mode set successfully for \(entityId): \(entity.state)")
                     case .failure(let error):
                         print("Failed to set temperature and mode for \(entityId): \(error)")
-                        self?.errorMessage = "Failed to set temperature and mode for \(entityId): \(error.localizedDescription)"
+                        self.errorMessage = "Failed to set temperature and mode for \(entityId): \(error.localizedDescription)"
                     }
                 }
             }
         }
     }
-    
-    // Add other necessary functions from WatchManager if needed
+
+    func fetchInitialState() {
+        fetchState(for: "climate.halcyon_chambre")
+    }
+
+    public func fetchState(for entityId: String) {
+        restClient.fetchState(entityId: entityId) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let entity):
+                    if let attributes = entity.thermostatAttributes() {
+                        self?.processThermostatAttributes(attributes)
+                    } else {
+                        self?.errorMessage = "Failed to decode thermostat attributes"
+                    }
+                case .failure(let error):
+                    self?.errorMessage = "Error fetching initial state: \(error.localizedDescription)"
+                }
+            }
+        }
+    }
+
+    private func processThermostatAttributes(_ attributes: ThermostatAttributes) {
+        // Update your ViewModel properties based on the fetched attributes
+        self.tempSet = Int(attributes.currentTemperature ?? 22)
+        self.halcyonMode = HvacModes(rawValue: attributes.hvacMode ?? "cool") ?? .off
+    }
 }

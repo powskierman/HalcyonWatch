@@ -10,7 +10,7 @@ import HassWatchFramework
 
 class HalcyonAPIService: ObservableObject {
     static let shared = HalcyonAPIService()
-    private var restClient: HassRestClient
+    public var restClient: HassRestClient
 
     init() {
         self.restClient = HassRestClient.shared

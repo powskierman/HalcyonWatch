@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = HalcyonViewModel()
+    @StateObject private var viewModel = HalcyonViewModel(restClient: .shared)
     @State private var selectedTemperature: Double = 22
     @State private var selectedRoom: Room = .chambre
     @State private var temperaturesForRooms: [Room: Double] = Room.allCases.reduce(into: [:]) { $0[$1] = 22 }
@@ -29,8 +29,8 @@ struct ContentView: View {
                 }
             }
             .onChange(of: selectedRoom) { newRoom in
-                   viewModel.fetchDeviceState(for: newRoom.rawValue)
-             }
+                viewModel.fetchState(for: "climate.\(newRoom.rawValue)")
+            }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(selectedRoom.rawValue)
         }
@@ -53,6 +53,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(HalcyonViewModel()) // This is where you add the environment object
+        ContentView().environmentObject(HalcyonViewModel(restClient: .shared)) // This is where you add the environment object
     }
 }
